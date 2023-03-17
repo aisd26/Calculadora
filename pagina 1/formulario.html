@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+ 
+   <title>Pagina 1 </title>
+</head>
+<body>
+    <div style="margin:24px;">
+        <nav class="navbar navbar-light" style="background-color: #e0e0e0;">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Inicio</a> 
+          <ul class="nav navbar-nav">
+            <li >
+              <a href="menu.html">Menu</a>
+            </li>
+            <li class="active">
+                <a href="formulario.html">Formulario</a>
+            </li>
+            <li >
+                <a href="resultado.html">Resultado</a>    
+            </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>    
+
+          </ul>
+        </div>
+      </nav>
+    </div>  
+   <h1>FORMULARIO</h1> 
+
+
+   <form id="pedido">
+     <p>Nombre: <input type="text" name="nombre" id="nombre" size="40">
+     </p>  
+
+      <p>Apellido: <input type="text" name="apellido" id="apellido" size="40">
+     </p>         
+
+
+    <p>Telefono: <input type="text" name="telefono" id="telefono" size="40">
+     </p>
+     <p>Estado: <input type="text" name="estado" id="estado" size="40">
+     </p>
+     <p>Ciudad: <input type="text" name="ciudad" id="ciudad" size="40">
+     </p>
+     <p>Calle y Numero: <input type="text" name="calleynumero" id="calleynumero" size="40">
+     </p>
+
+     <p>Sexo: <input type="radio" name="sexo" value="Hombre"><green>Hombre</green> <input type="radio" name="sexo" value:="Mujer"><purple>Mujer</purple><br><br>
+     <p>¿que pediras? 
+        <select name="menu" id="menu">
+            <optgroup label="Albums">
+          <option value="DIMENSION:DILEMMA">DIMENSION:DILEMMA</option>
+          <option value="Border:Carnival">Border:Carnival</option>
+          <option value="Dimension:Answer">Dimension:Answer</option>
+          <option value="Noeasy">Noeasy</option>
+          <option value="Freeze">Freeze</option>
+          <option value="2 baddies">2 baddies</option>
+          <option value="Manifesto:Day 1">Manifesto:Day 1</option>
+      </optgroup>
+      <optgroup label="Lighstick">
+          <option value="TXT lightstick">Lighstick</option>
+          <option value="EN-lightstick">Lightstick</option>
+      </optgroup>
+     </select>
+     <hr>
+     <h1 style="color: darkblue;">Extras!</h1>
+     <input type="checkbox" id="photocard extra" checked><label for="photocard extra" style="font-size: 20px;">Photocard Extra</label><br>
+      <input type="checkbox" id="sleves" checked><label for="sleves" style="font-size: 20px;">Sleves</label><br>
+       <input type="checkbox" id="Stickers" checked><label for="Stickers" style="font-size: 20px;">Stickers</label><br>
+     </p>     
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">   
+    </form>
+    <script type="text/javascript">
+        const form=document.getElementById("pedido");
+              form.addEventListener("submit", function(event){
+                event.preventDefault();
+                const formData=new FormData(form);
+                const orden={
+                    nombre:formData.get("nombre"),
+                    apellido:formData.get("apellido"),
+                    telefono:formData.get("telefono"),
+                    estado:formData.get("estado"),
+                    ciudad:formData.get("ciudad"),
+                    calleynumero:formData.get("calleynumero"),
+                    sexo:formData.get("sexo"),
+                    menu:formData.get("menu")
+                    photocardextra:document.getElementById("photocard extra").checked ? "Si" : "No";
+                    sleves:document.getElementById("sleves").checked ? "Si" : "No";
+                    stickers:document.getElementById("stickers").checked ? "Si" : "No";
+                };
+                localStorage.setItem ("orden",JSON.stringify(orden));
+                window.location.href="pedidorealizado.html";
+              });
+    </script>
+
+</body>
+</html>  

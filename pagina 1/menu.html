@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.3/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+ <enlace href=" https://fonts.cdnfonts.com/css/hedgier " rel="hoja de estilo">
+                
+
+   <title>Pagina 1 </title>
+</head>
+<body>
+    <div style="margin:24px;">
+     <nav class="navbar navbar-light" style="background-color: #e0e0e0;">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">Inicio</a> 
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="menu.html">Menu</a>
+            </li>
+            <li >
+                <a href="formulario.html">Formulario</a>
+            </li>
+            <li>
+                <a href="resultado.html">Resultado</a>    
+            </li>
+            <li>
+                <a href="contacto.html">Contacto</a>
+            </li>    
+
+          </ul>
+        </div>
+      </nav>
+    </div>  
+   <h1>MENU</h1> 
+<div id= "menu"></div>
+<script type="text/javascript">
+   fetch('menu.json')
+   .then(response=>response.json())
+   .then(data=>{
+     const menu=document.getElementById('menu');
+     data.menu.forEach(item=>{
+        const container=document.createElement('div');
+        constainer.classList.add('item');
+        container.innerHTML='
+        <img src="{item.imagen}"alt=""
+        ${item.nombre}
+        ';
+        menu.appendChild(container)
+
+     })
+   });
+   </script>     
+<tr>
+        <td><img src="1.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Enhypen</td>
+        <td>DIMENSION:DILEMMA</td>
+        <td>$590.00</td>
+     </tr>   
+     <tr>
+        <td><img src="2.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Enhypen</td>
+        <td>Border:Carnival</td>
+        <td>$500.00</td>
+     </tr>   
+     <tr>
+        <td><img src="3.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Enhypen</td>
+        <td>Dimension:Answer</td>
+        <td>$600.00</td>
+     </tr>   
+     <tr>
+        <td><img src="4.jpg" style="width:200px"></td>
+        <td>JYP</td>
+        <td>Stray Kids</td>
+        <td>Noeasy</td>
+        <td>220</td>
+    
+     </tr>  
+     <tr>
+        <td><img src="6.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Tomorrow x Together</td>
+        <td>Freeze</td>
+        <td>$300.00</td>
+     </tr>
+     <tr>
+        <td><img src="7.jpg" style="width:200px"></td>
+        <td>SM</td>
+        <td>NCT127</td>
+        <td>2 baddies</td>
+        <td>$300.00</td>
+     </tr>
+      <tr>
+        <td><img src="8.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Enhypen</td>
+        <td>Manifesto:Day 1</td>
+        <td>$300.00</td>
+     </tr> 
+     <tr>
+        <td><img src="9.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Tommorrow x Together</td>
+        <td>Lighstick</td>
+        <td>$550.00</td>
+     </tr> 
+     <tr>
+        <td><img src="10.jpg" style="width:200px"></td>
+        <td>Hybe</td>
+        <td>Enhypen</td>
+        <td>Lightstick</td>
+        <td>$550.00</td>
+     </tr>      
+
+
+    </table>   
+
+</body>
+</html>  
